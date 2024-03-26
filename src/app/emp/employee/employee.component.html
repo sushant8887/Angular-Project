@@ -1,0 +1,110 @@
+<!-- <form [formGroup]="empForm"(ngSubmit)="Add()">
+    <label for="name">Id: </label>
+    <input type="text" name="id" formControlName="id"><br>
+    <label for="name">Name: </label>
+    <input type="text" name="name" formControlName="name"><br>
+    <label for="name">Salary: </label>
+    <input type="number" name="salary" formControlName="salary"><br>
+    <button type="submit">Add</button>
+</form>
+<ul *ngFor="let i of employees">
+    <li>{{i.id}}</li>
+    <li>{{i.name}}</li>
+    <li>{{i.salary}}</li>
+</ul> -->
+
+<div class="container-fluid">
+  <div class="table-responsive">
+    <table style="margin-top: 15px" class="table table-primary">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Name</th>
+          <th scope="col">Salary</th>
+          <th scope="col">Add Employee</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="" *ngFor="let i of employees">
+          <td scope="row">{{ i.id }}</td>
+          <td>{{ i.name }}</td>
+          <td>{{ i.salary }}</td>
+
+          <td>
+            <a
+              name=""
+              id=""
+              class="btn btn-primary me-4"
+              href="#"
+              role="button"
+              (click)="editEmployee(i.id, i)"
+              >Update</a
+            >
+            <a
+              style="margin-right: 5px"
+              name=""
+              id=""
+              class="btn btn-danger"
+              href="#"
+              role="button"
+              (click)="deleteEmployee(i.id)"
+              >Delete</a
+            >
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="container" [formGroup]="empForm" (ngSubmit)="Add()">
+  <form>
+    <div class="mb-3 row">
+      <label for="inputName" class="col-4 col-form-label">ID</label>
+      <div class="col-8">
+        <input
+          type="text"
+          class="form-control"
+          name="id"
+          formControlName="id"
+          id="id"
+          placeholder="Id"
+        />
+      </div>
+    </div>
+
+    <div class="mb-3 row">
+      <label for="inputName" class="col-4 col-form-label">Name</label>
+      <div class="col-8">
+        <input
+          type="text"
+          class="form-control"
+          name="name"
+          formControlName="name"
+          id="name"
+          placeholder="Name"
+        />
+      </div>
+    </div>
+
+    <div class="mb-3 row">
+      <label for="inputName" class="col-4 col-form-label">Salary</label>
+      <div class="col-8">
+        <input
+          type="text"
+          class="form-control"
+          name="salary"
+          formControlName="salary"
+          id="salary"
+          placeholder="Salary"
+        />
+      </div>
+    </div>
+
+    <div class="mb-3 row">
+      <div class="offset-sm-4 col-sm-8">
+        <button type="submit" class="btn btn-primary">Add Employee</button>
+      </div>
+    </div>
+  </form>
+</div>
